@@ -1,26 +1,17 @@
+import { useState } from 'react'
+
 const App = () => {
-  props = {
-    name: 'Maya',
-    age: 36,
-  }
-  return (
-    <div>
-      <h1>Greetings</h1>
-      <Hello />
-    </div>
+  const [ counter, setCounter ] = useState(0)
+
+  setTimeout(
+    () => setCounter(counter + 1),
+    1000
   )
-}
 
-const Hello = ({ name, age }) => {
-
-  const bornYear = () => new Date().getFullYear() - age
-  
+  console.log('rendering...', counter)
   
   return (
-    <div>
-      <p>Hello {name}, you are {age} years old</p>
-      <p>So you were probably born in {bornYear()}</p>
-    </div>
+    <div>{counter}</div>
   )
 }
 
